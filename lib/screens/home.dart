@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:panucci_ristorante/components/main_drawer.dart';
+import 'package:panucci_ristorante/screens/drink_menu.dart';
 import 'package:panucci_ristorante/screens/higtlights.dart';
 import 'package:panucci_ristorante/themes/app_colors.dart';
+import 'package:panucci_ristorante/screens/food_menu.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -12,6 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _currentPage = 0;
+  final List<Widget> pages = [Higtlights(), FoodMenu(), DrinkMenu()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,7 +64,7 @@ class _HomeState extends State<Home> {
           });
         },
       ),
-      body: const Higtlights(),
+      body: pages.elementAt(_currentPage),
     );
   }
 }
