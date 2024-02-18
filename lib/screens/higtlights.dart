@@ -10,10 +10,19 @@ class Higtlights extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
       child: CustomScrollView(
         slivers: <Widget>[
-          const SliverToBoxAdapter(child: Text("Destaques")),
+          const SliverToBoxAdapter(
+            child: Text(
+              "Destaques",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontFamily: "Caveat",
+                fontSize: 32,
+              ),
+            ),
+          ),
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (context, index) {
